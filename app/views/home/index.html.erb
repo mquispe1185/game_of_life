@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row justify-content-md-center" data-controller="game">
+    <h1 class="row justify-content-md-center mb-4">Game of Life</h1>
+    <div class="row justify-content-md-center w-50">
+      <h3>Rules</h3>
+      <ul>
+        <li>Any live cell with fewer than two live neighbours dies, as if caused by under-population.</li>
+        <li>Any live cell with two or three live neighbours lives on to the next generation.</li>
+        <li>Any live cell with more than three live neighbours dies, as if by overcrowding.</li>
+        <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</li>
+      </ul>
+    </div>
+    <div class="row justify-content-md-center my-4">
+      <button type="button" class="col-1 btn btn-success me-2" data-action="click->game#play" data-game-target="start">Start</button>
+      <button type="button" class="col-1 btn btn-primary me-2" style="display: none;" data-action="click->game#pause" data-game-target="pause">Pause</button>
+      <button type="button" class="col-1 btn btn-danger" data-action="click->game#reset" data-game-target="reset">Reset</button>
+    </div>
+    <table class="table" id="game">
+      <% 3.times do |i|%>
+        <tr>
+          <% 3.times do |j|%>
+            <td id="cell_<%=i%>_<%=j%>" class="cell_g live">
+              <div id="circle_<%=i%>_<%=j%>" data-game-i-param="<%=i%>" data-game-j-param="<%=j%>" class="circle bg-transparent" data-action="click->game#select"></div>
+            </td>
+          <%end%>
+        </tr>
+      <%end%>
+    </table>
+  </div>
+</div>

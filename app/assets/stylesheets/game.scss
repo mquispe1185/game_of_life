@@ -1,0 +1,22 @@
+.table{
+    width: 20%;
+    > tr{
+        height: 150px;
+        
+    }
+}
+table {
+    border-collapse: collapse; /* Merge borders into a single border */
+
+}
+td{
+    border: 2px solid #3498db !important;
+    background-color: aliceblue !important;
+    cursor: pointer;
+}
+.circle {
+    width: 50px; /* Adjust the size of the circle */
+    height: 50px; /* Same as width to make it a circle */
+    background-color: #3498db; /* Background color for the circle */
+    border-radius: 50%; /* Makes the element a circle */
+  }
